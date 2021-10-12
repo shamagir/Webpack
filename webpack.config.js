@@ -1,4 +1,3 @@
-
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -6,6 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
+  },
+  devServer: {
+    historyApiFallback: true,
+    static: path.resolve(__dirname, '/dist'),
+    open: true,
+    compress: true,
   },
   module: {
     rules: [
